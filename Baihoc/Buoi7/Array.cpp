@@ -70,14 +70,14 @@
 // Mảng 2 chiều
 // Nhập xuất cơ bản
 
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
 
 using namespace std;
 // Truyền vào mảng
-int sumArr (int a[], int n) {
+int sumArr(int a[], int n)
+{
     int sum = 0;
     for (int i = 0; i < n; i++)
     {
@@ -85,10 +85,11 @@ int sumArr (int a[], int n) {
     }
     return sum;
 }
-int main (){
+int main()
+{
     int n;
     cin >> n;
-    int [ ]
+    int[]
 }
 
 // Nhập ma trận số hàng 3, số cột là 2, tính tổng các số ở hàng 2
@@ -97,7 +98,7 @@ int main()
     int n = 3, m = 2;
     cin >> n >> m;
     int a[n][m];
-    //Nhập dữ liệu cho ma trận
+    // Nhập dữ liệu cho ma trận
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -123,38 +124,42 @@ int main()
 
     cout << "Tổng các số trong hàng 2 là: " << sum << endl;
 
-
     return 0;
 }
 
 // Nhập vào mảng số nguyên có n phần tử, tìm số lớn nhất và số lớn thứ 2 trong mảng vì in ra kết quả trên 2 dòng
-//Input:
-//Dòng đầu là n(2<=n <=100) - số lượng phần tử của mảng
-//Dòng thứ 2 bao gồm n phần tử của mảng
+// Input:
+// Dòng đầu là n(2<=n <=100) - số lượng phần tử của mảng
+// Dòng thứ 2 bao gồm n phần tử của mảng
 
 #include <iostream>
 #include <iomanip>
 #include <cmath>
 
 using namespace std;
-//Cho res = rỗng, so sánh từng giá trị trong mảng
-int maxArray (int a [], int n) {
+// Cho res = rỗng, so sánh từng giá trị trong mảng
+int maxArray(int a[], int n)
+{
     int res = a[0];
-    for (int i = 0; i < n; i++){
-        if(a[i] > res){
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] > res)
+        {
             res = a[i];
         }
     }
     return res;
 }
 
-int main () {
+int main()
+{
     int n;
     cin >> n;
-    int a[n+5];
-    for (int i =0; i<n; i++){
+    int a[n + 5];
+    for (int i = 0; i < n; i++)
+    {
         cin >> a[i];
     }
-    cout << "Max " <<maxArray(a,n) << endl;
+    cout << "Max " << maxArray(a, n) << endl;
     return 0;
 }
