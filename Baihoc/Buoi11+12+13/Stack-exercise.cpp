@@ -33,9 +33,9 @@ using namespace std;
 class Stack
 {
 public:
-    bool inValid(string s)
+    bool isValid(string s)
     {
-        stack<char> st;
+        stack<int> st;
 
         for (int i = 0; i < s.size(); i++)
         {
@@ -46,39 +46,39 @@ public:
             case '{':
                 st.push(s[i]);
                 break;
-
-            case ')';
-            if(st.empty() || st.top != '('){
-                return false;
+            case ')':
+                if (st.empty() || st.top() != '(')
+                {
+                    return false;
+                }
+                st.pop();
+                break;
+            case ']':
+                if (st.empty() || st.top() != '[')
+                {
+                    return false;
+                }
+                st.pop();
+                break;
+            case '}':
+                if (st.empty() || st.top() != '{')
+                {
+                    return false;
+                }
+                st.pop();
+                break;
             }
-            st.pop();
-            break;
-            
-            case '}';
-            if(st.empty() || st.top != '{}'){
-                return false;
-            }
-            st.pop();
-            break;
-
-
-            case ']';
-            if(st.empty() || st.top != '['){
-                return false;
-            }
-            st.pop();
-            break;
-
         }
-        }
-        if(st.empty())
+
+        if (st.empty())
+        {
             return true;
-        else 
-            return false;
+        }
+        return false;
     }
 };
 
-        // Gặp mở ngoặc thì cho vào stack
-        //  Đóng ngoặc thì check vs đỉnh stack xem có cùng 1 cấp k?
-        //  Có -- đưa dấu đó ra khỏi stack
-        //  Sau khi duyệt chuỗi, stack rỗng là dấu ngoặc đúng - Stack không rỗng là dấu ngoặc sai
+// Gặp mở ngoặc thì cho vào stack
+//  Đóng ngoặc thì check vs đỉnh stack xem có cùng 1 cấp k?
+//  Có -- đưa dấu đó ra khỏi stack
+//  Sau khi duyệt chuỗi, stack rỗng là dấu ngoặc đúng - Stack không rỗng là dấu ngoặc sai
